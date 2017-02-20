@@ -1,0 +1,34 @@
+List the components of Hadoop 2.x :
+
+Hadoop 2.x is a high-level architecture that overcomes the limitations of hadoop 1.x.
+
+Hadoop Common Module is a Hadoop Base API (A Jar file) for all Hadoop Components. All other components works on top of this module.
+HDFS stands for Hadoop Distributed File System. It is also know as HDFS V2 as it is part of Hadoop 2.x with some enhanced features.
+It is used as a Distributed Storage System in Hadoop Architecture.
+
+YARN stands for Yet Another Resource Negotiator. It is new Component in Hadoop 2.x Architecture.
+MapReduce is a Batch Processing or Distributed Data Processing Module. It is also know as “MR V1” as it is part of Hadoop 1.x with some updated features.
+Remaining all Hadoop Ecosystem components work on top of these three major components: HDFS, YARN and MapReduce.
+
+Three major components of Hadoop 2.x:
+1.HDFC
+2.YARN
+3.MapReduce
+
+ResourceManager:A scheduler that allocates available resources in the cluster amongst the competing applications.
+
+NodeManager:Runs on each node in the cluster and takes direction from the ResourceManager. It is responsible for managing resources available on a single node.
+
+ApplicationMaster:An instance of a framework-specific library, an ApplicationMaster runs a specific YARN job and is responsible for negotiating
+resources from the ResourceManager and also working with the NodeManager to execute and monitor Containers.
+The actual data processing occurs within the Containers executed by the ApplicationMaster. A Container grants rights to an application
+to use a specific amount of resources (memory, cpu etc.) on a specific host.
+
+YARN is not the only new major feature of Hadoop 2.0. HDFS has undergone a major transformation with a collection of new features that
+include:
+1.NameNode HA:Automated failover with a hot standby and resiliency for the NameNode master service.
+2.Snapshots:Point-in-time recovery for backup, disaster recovery and protection against use errors.
+3.Federation:A clear separation of namespace and storage by enabling generic block storage layer.
+NameNode HA is achieved using existing components like ZooKeeper along with new components like a quorum of JournalNodes and the ZooKeeper
+Failover Controller (ZKFC).Federation enables support for multiple namespaces in the cluster to improve scalability and isolation.
+Federation also opens up the architecture, expanding the applicability of HDFS cluster to new implementations and use cases.
